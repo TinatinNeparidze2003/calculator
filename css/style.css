@@ -55,3 +55,40 @@ form input.equal{
  form input.operator{
   color: chartreuse;
 }
+/* ეს ნაწილი იმუშავებს მხოლოდ მობილურებზე */
+@media (max-width: 450px) {
+    .calculator {
+        width: 90%; /* ეკრანის სიგანეზე ადაპტაცია */
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    /* აიძულებს ღილაკებს დარჩნენ ერთ ხაზზე */
+    .calculator form div {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        gap: 8px; /* დაშორება ღილაკებს შორის */
+        margin-bottom: 10px;
+    }
+
+    /* ღილაკების ზომის ოპტიმიზაცია */
+    .calculator form input[type="button"] {
+        width: 100% !important; /* რომ შეავსოს თავისი წილი ადგილი */
+        height: 60px !important;
+        margin: 0 !important;
+        font-size: 1.2rem;
+        flex: 1; /* ყველა ღილაკი თანაბარი ზომის იქნება */
+    }
+
+    /* ტოლობის ღილაკი (ორმაგი ზომა) */
+    .calculator form input.equal {
+        flex: 2.2; 
+    }
+
+    /* ეკრანის ტექსტის ზომა */
+    .display input {
+        font-size: 2.5rem !important;
+        height: 80px !important;
+    }
+}
